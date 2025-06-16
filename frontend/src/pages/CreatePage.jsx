@@ -22,7 +22,7 @@ const CreatePage = () => {
     
     setLoading(true);
     axios
-      .post('http://localhost:5000/api/products', data)
+      .post(`${import.meta.env.VITE_API_BASE_URL}/api/products`, data)
       .then(() => {
         console.log(data);
         setLoading(false);
