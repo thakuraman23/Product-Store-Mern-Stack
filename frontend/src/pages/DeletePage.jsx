@@ -13,7 +13,7 @@ const DeletePage = () => {
   const handleDeleteProduct = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5000/api/products/${id}`)
+      .delete(`${import.meta.env.VITE_API_BASE_URL}/api/products/${id}`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Product Deleted successfully', { variant: 'success' });
