@@ -8,7 +8,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/products')
+      .get(`${import.meta.env.VITE_API_BASE_URL}/api/products`)
       .then((response) => {
         if (Array.isArray(response.data.data)) {
           setProducts(response.data.data);
