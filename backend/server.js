@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());//allows us to use JSON data in the req.body
 
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://product-store-mern-stack-frontend.onrender.com'],
+  credentials: true
+}));
 
 app.use("/api/products",productRoutes);
 
